@@ -5,6 +5,7 @@ import {
   Route,
   Link,
   useParams,
+  useRouteMatch,
 } from 'react-router-dom';
 import Movies from './components/Movies';
 import Admin from './components/Admin';
@@ -30,6 +31,9 @@ export default function App() {
                   <Link to="/movies">Movies</Link>
                 </li>
                 <li className="list-group-item">
+                  <Link to="/by-category">Categories</Link>
+                </li>
+                <li className="list-group-item">
                   <Link to="/admin">Manage Catelogue</Link>
                 </li>
               </ul>
@@ -43,6 +47,9 @@ export default function App() {
               </Route>
               <Route path="/movies">
                 <Movies />
+              </Route>
+              <Route exact path="/by-category">
+                <CategoryPage />
               </Route>
               <Route path="/admin">
                 <Admin />
@@ -61,4 +68,22 @@ export default function App() {
 function Movie() {
   let { id } = useParams();
   return <h2>Movie id {id}</h2>;
+}
+
+function CategoryPage() {
+  let { path, url } = useRouteMatch();
+  return (
+    <div>
+      <h2>Categories</h2>
+
+      <ul>
+        <li>
+          <Link to={`${path}/camedy`}>Comedy</Link>
+        </li>
+        <li>
+          <Link to={`${url}/drama`}>Drama</Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
