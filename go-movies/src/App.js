@@ -1,10 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  useParams,
   useRouteMatch,
 } from 'react-router-dom';
 import Movies from './components/Movies';
@@ -44,9 +43,6 @@ export default function App() {
 
           <div className="col-md-10">
             <Switch>
-              {/* <Route path="/movies/:id">
-                <Movie />
-              </Route> */}
               <Route path="/movies/:id" component={OneMovie} />
               <Route path="/movies">
                 <Movies />
@@ -77,11 +73,6 @@ export default function App() {
       </div>
     </Router>
   );
-}
-
-function Movie() {
-  let { id } = useParams();
-  return <h2>Movie id {id}</h2>;
 }
 
 function CategoryPage() {
