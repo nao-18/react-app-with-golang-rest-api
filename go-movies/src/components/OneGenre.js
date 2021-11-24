@@ -52,16 +52,17 @@ export default class OneGenre extends Component {
         <Fragment>
           <h2>Genre: {genreName}</h2>
 
-          <ul className="list-group">
+          <div className="list-group">
             {movies.map((m) => (
               <Link
+                key={m.id}
                 to={`/movies/${m.id}`}
                 className="list-group-item list-group-item-action"
               >
                 {m.title}
               </Link>
             ))}
-          </ul>
+          </div>
         </Fragment>
       );
     }
