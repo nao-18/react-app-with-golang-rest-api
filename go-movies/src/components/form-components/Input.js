@@ -2,7 +2,7 @@ const Input = (props) => {
   return (
     <div className="mb-3">
       <label htmlFor={props.name} className="form-label">
-        {props.name}
+        {props.title}
       </label>
       <input
         type={props.type}

@@ -151,8 +151,8 @@ export default class EditMovie extends Component {
             />
 
             <Input
-              title={'Release_date'}
-              type={'text'}
+              title={'Release Date'}
+              type={'date'}
               name={'release_date'}
               value={movie.release_date}
               handleChange={this.handleChange}
