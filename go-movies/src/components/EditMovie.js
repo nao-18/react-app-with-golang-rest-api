@@ -148,7 +148,7 @@ export default class EditMovie extends Component {
                 this.state.movie.id,
               { method: 'GET' }
             )
-              .then((response) => response.json)
+              .then((response) => response.json())
               .then((data) => {
                 if (data.error) {
                   this.setState({
